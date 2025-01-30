@@ -67,7 +67,9 @@ public class FirstPersonController : MonoBehaviour
     {
         playerInput.actions["Jump"].started += Saltar;
         playerInput.actions["Move"].performed += Mover;
-        playerInput.actions["Move"].canceled += CancelarMover; ;
+        playerInput.actions["Move"].canceled += CancelarMover; 
+
+        // playerInput.deviceLostEvent.AddListener((x) => Debug.Log("Reconecta el mando, por favor")
     }
     private void Mover(InputAction.CallbackContext ctx) // ctx contexto
     {
