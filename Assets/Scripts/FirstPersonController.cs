@@ -67,9 +67,11 @@ public class FirstPersonController : MonoBehaviour
     {
         playerInput.actions["Jump"].started += Saltar;
         playerInput.actions["Move"].performed += Mover;
-        playerInput.actions["Move"].canceled += CancelarMover; 
+        playerInput.actions["Move"].canceled += CancelarMover;
 
         // playerInput.deviceLostEvent.AddListener((x) => Debug.Log("Reconecta el mando, por favor")
+
+        //playerInput.SwitchCurrentActionMap("Coche"); -> cambia al mapa de coche que tengas hecho
     }
     private void Mover(InputAction.CallbackContext ctx) // ctx contexto
     {
