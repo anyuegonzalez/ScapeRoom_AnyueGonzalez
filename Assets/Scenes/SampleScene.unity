@@ -340,21 +340,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8081082332602259471, guid: ee271b9d4a369a04a9ce929059f39ead,
-        type: 3}
-      propertyPath: jumpHeight
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081082332602259471, guid: ee271b9d4a369a04a9ce929059f39ead,
-        type: 3}
-      propertyPath: crouchedSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8081082332602259471, guid: ee271b9d4a369a04a9ce929059f39ead,
-        type: 3}
-      propertyPath: whatIsGround.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3663343391184359421, guid: ee271b9d4a369a04a9ce929059f39ead, type: 3}
     m_RemovedGameObjects: []

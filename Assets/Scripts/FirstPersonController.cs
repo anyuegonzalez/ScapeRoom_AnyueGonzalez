@@ -60,7 +60,6 @@ public class FirstPersonController : MonoBehaviour
         MoveAndRotate();
         ApplyGravity();
         Crouch();
-        Jump();
 
     }
     private void OnEnable()
@@ -70,7 +69,12 @@ public class FirstPersonController : MonoBehaviour
 
     private void Saltar(InputAction.CallbackContext obj)
     {
-        
+        if (IsGrounded())
+        {
+            verticalMovement.y = 0;
+            verticalMovement.y = Mathf.Sqrt(-2 * gravityScale * jumpHeight);
+
+        }
     }
 
     private void Crouch()
@@ -108,19 +112,6 @@ public class FirstPersonController : MonoBehaviour
 
             //Se aplica movimiento en dicha dirección.
             controller.Move(movementInput * movementSpeed * Time.deltaTime);
-        }
-    }
-
-    private void Jump()
-    {
-        if(IsGrounded())
-        {
-            verticalMovement.y = 0;
-
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                verticalMovement.y = Mathf.Sqrt(-2 * gravityScale * jumpHeight);
-            }
         }
     }
 
