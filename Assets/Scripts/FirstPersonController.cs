@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -37,10 +38,13 @@ public class FirstPersonController : MonoBehaviour
     private CharacterController controller;
     private Camera cam;
 
+    private PlayerInput playerInput;
+
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        playerInput = GetComponent<PlayerInput>();
         cam = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -58,6 +62,10 @@ public class FirstPersonController : MonoBehaviour
         Crouch();
         Jump();
 
+    }
+    private void OnEnable()
+    {
+        playerInput.actions["Jump"].
     }
 
     private void Crouch()
