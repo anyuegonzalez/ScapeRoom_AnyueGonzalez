@@ -65,7 +65,7 @@ public class FirstPersonController : MonoBehaviour
     }
     private void OnEnable()
     {
-        playerInput.actions["Jump"].
+        //playerInput.actions["Jump"].
     }
 
     private void Crouch()
