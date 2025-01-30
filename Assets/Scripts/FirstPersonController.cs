@@ -39,6 +39,7 @@ public class FirstPersonController : MonoBehaviour
     private Camera cam;
 
     private PlayerInput playerInput;
+    private Vector2 input;
 
 
     private void Awake()
@@ -68,15 +69,15 @@ public class FirstPersonController : MonoBehaviour
         playerInput.actions["Move"].performed += Mover;
         playerInput.actions["Move"].canceled += CancelarMover; ;
     }
-    private void Mover(InputAction.CallbackContext obj)
+    private void Mover(InputAction.CallbackContext ctx) // ctx contexto
     {
-
+        input = ctx.ReadValue<Vector2>();
     }
-    private void CancelarMover(InputAction.CallbackContext obj)
+    private void CancelarMover(InputAction.CallbackContext ctx)
     {
-        
+        input = new Vector2(0,0); // se cancela el input 
     }
-    private void Saltar(InputAction.CallbackContext obj)
+    private void Saltar(InputAction.CallbackContext ctx)
     {
         if (IsGrounded())
         {
@@ -100,13 +101,6 @@ public class FirstPersonController : MonoBehaviour
 
     private void MoveAndRotate()
     {
-        //Lectura de inputs
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-
-        Vector2 input = new Vector2(h, v).normalized;
-
-
         //Se aplica al cuerpo la rotación que tenga la cámara.
         transform.rotation = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0);
 
