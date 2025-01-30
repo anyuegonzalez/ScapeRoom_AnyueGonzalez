@@ -65,8 +65,17 @@ public class FirstPersonController : MonoBehaviour
     private void OnEnable()
     {
         playerInput.actions["Jump"].started += Saltar;
+        playerInput.actions["Move"].performed += Mover;
+        playerInput.actions["Move"].canceled += CancelarMover; ;
     }
+    private void Mover(InputAction.CallbackContext obj)
+    {
 
+    }
+    private void CancelarMover(InputAction.CallbackContext obj)
+    {
+        
+    }
     private void Saltar(InputAction.CallbackContext obj)
     {
         if (IsGrounded())
