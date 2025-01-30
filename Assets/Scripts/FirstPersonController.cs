@@ -65,7 +65,12 @@ public class FirstPersonController : MonoBehaviour
     }
     private void OnEnable()
     {
-        //playerInput.actions["Jump"].
+        playerInput.actions["Jump"].started += Saltar;
+    }
+
+    private void Saltar(InputAction.CallbackContext obj)
+    {
+        
     }
 
     private void Crouch()
